@@ -20,8 +20,8 @@ export class MyApp {
     this.initApp();
     this.pages = [
       {title: 'Home', component: HomePage},
-      {title: 'Singers', component: SingersPage},
-      {title: 'Songs', component: SongsPage}
+      {title: 'Questions', component: SingersPage},
+      {title: 'Users', component: SongsPage}
     ];
   }
 

@@ -4,13 +4,16 @@ import { MyApp } from './app.component';
 import {HomePage} from "../pages/home/home";
 import {SingersPage} from "../pages/singers/singers";
 import {SongsPage} from "../pages/songs/songs";
+import {MusicList} from "../providers/music-list";
+import {QusDetailPage} from "../pages/qus-detail/qus-detail";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     SingersPage,
-    SongsPage
+    SongsPage,
+    QusDetailPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -20,8 +23,9 @@ import {SongsPage} from "../pages/songs/songs";
     MyApp,
     HomePage,
     SingersPage,
-    SongsPage
+    SongsPage,
+    QusDetailPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [MusicList]
 })
 export class AppModule {}

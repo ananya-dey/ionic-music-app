@@ -1,5 +1,5 @@
 <!--
-  Generated template for the Singers page.
+  Generated template for the QusDetail page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
@@ -9,16 +9,19 @@
     <button ion-button icon-only menuToggle>
        <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Questions</ion-title>
+    <ion-title>qus-detail</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
   <ion-list>
-    <button ion-item *ngFor="let x of qus" (click)="QusDetails(x.question_id)">
-      <h3>{{x.title}}</h3>
-      <ion-icon name="arrow-forward" item-right></ion-icon>
+    <button ion-item *ngFor="let x of answer">
+      <ion-avatar>
+        <img [src]="x.owner.profile_image">
+      </ion-avatar>
+      <h3>{{x.owner.display_name}}</h3>
+      <a [href]="x.owner.link">Profile Link</a>
     </button>
   </ion-list>
 </ion-content>

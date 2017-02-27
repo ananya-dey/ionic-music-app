@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import {MusicList} from "../../providers/music-list";
+import {QusDetailPage} from "../qus-detail/qus-detail";
 
 /*
   Generated class for the Singers page.
@@ -12,11 +14,26 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'singers.html'
 })
 export class SingersPage {
+  public qus:any[];
+  constructor(public navCtrl: NavController, public navParams: NavParams, public musicList:MusicList) {
+    this.AllQuestions();
+  }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  AllQuestions(){
+    this.musicList.getAllQuestions()
+      .subscribe(
+        res=>{
+          this.qus = res.items;
+          console.log(this.qus);
+        })
+  }
+
+  QusDetails(question_id:string){
+    this.navCtrl.push(QusDetailPage, {question_id});
+  }
 
   ionViewDidLoad() {
-    console.log('SingersPage');
+    console.log('QuiestionsPage');
   }
 
 }

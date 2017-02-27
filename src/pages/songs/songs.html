@@ -9,11 +9,17 @@
     <button ion-button icon-only menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Songs</ion-title>
+    <ion-title>Users</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-  <h3>Songs View Page</h3>
+  <ion-list>
+    <button ion-item *ngFor="let x of user">
+      <h3>{{x.owner.display_name}}</h3>
+      <ion-icon name="arrow-forward" item-right></ion-icon>
+    </button>
+  </ion-list>
 </ion-content>
+
